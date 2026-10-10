@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas Comunitarias | Donaciones</title>
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        .formulario-con-mensaje {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+        }
+
+        .formulario-con-mensaje .formulario {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .mensaje-enviado {
+            flex: 0 0 280px;
+            padding: 24px;
+            border-radius: 12px;
+            background: #e8f7e9;
+            border: 1px solid #a8d8ad;
+            color: #245b2a;
+            text-align: center;
+            position: sticky;
+            top: 24px;
+        }
+
+        .mensaje-enviado[hidden] {
+            display: none;
+        }
+
+        .mensaje-enviado h3 {
+            margin-top: 0;
+        }
+
+        @media (max-width: 700px) {
+            .formulario-con-mensaje {
+                flex-direction: column;
+            }
+
+            .mensaje-enviado {
+                flex: 1 1 auto;
+                width: 100%;
+                box-sizing: border-box;
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="contenedor encabezado">
+            <a href="index.html" class="logo">🐾 Huellitas Comunitarias</a>
+
+            <nav aria-label="Menú principal">
+                <a href="index.html">Inicio</a>
+                <a href="adopciones.html">Adopciones</a>
+                <a href="donaciones.html" class="activo">Donaciones</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="cabecera-pagina">
+            <span class="etiqueta">Toda ayuda cuenta</span>
+            <h1>Ayúdanos a llenar sus platitos</h1>
+
+            <p>
+                Tu apoyo puede hacer una gran diferencia.
+                Puedes colaborar con alimentos, cobijas y productos
+                de limpieza para mejorar la vida de los animales.
+            </p>
+        </section>
+
+        <section class="seccion contenedor">
+            <div class="titulo-seccion">
+                <h2>¿Qué necesitamos?</h2>
+
+                <p>
+                    Estos son algunos de los artículos que puedes
+                    aportar a nuestra campaña de apoyo animal.
+                </p>
+            </div>
+
+            <div class="tarjetas">
+
+                <article class="tarjeta">
+                    <div class="icono">🥣</div>
+                    <h3>Alimentos</h3>
+
+                    <ul class="lista">
+                        <li>Alimento seco para perros</li>
+                        <li>Alimento seco para gatos</li>
+                        <li>Alimento húmedo enlatado</li>
+                        <li>Premios para mascotas</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🧺</div>
+                    <h3>Descanso y comodidad</h3>
+
+                    <ul class="lista">
+                        <li>Cobijas limpias</li>
+                        <li>Toallas en buen estado</li>
+                        <li>Camas para mascotas</li>
+                        <li>Transportadoras en buen estado</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta">
+                    <div class="icono">🧹</div>
+                    <h3>Limpieza e higiene</h3>
+
+                    <ul class="lista">
+                        <li>Jabón y detergente</li>
+                        <li>Productos de limpieza adecuados para animales</li>
+                        <li>Bolsas para residuos</li>
+                        <li>Escobas, trapeadores y guantes</li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="seccion fondo-claro">
+            <div class="contenedor acopio">
+
+                <div>
+                    <span class="etiqueta">Centro de acopio</span>
+                    <h2>¿Dónde puedes llevar tus donaciones?</h2>
+
+                    <p>
+                        Recibiremos los artículos en el punto de
+                        recolección establecido por nuestro equipo.
+                        Revisa la información antes de acudir.
+                    </p>
+                </div>
+
+                <article class="datos-acopio">
+                    <h3>Información de entrega</h3>
+
+                    <p>
+                        <strong>Lugar:</strong>
+                        [Agregar ubicación real]
+                    </p>
+
+                    <p>
+                        <strong>Fechas:</strong>
+                        [Agregar fechas]
+                    </p>
+
+                    <p>
+                        <strong>Horario:</strong>
+                        [Agregar horario]
+                    </p>
+
+                    <p>
+                        <strong>Responsable:</strong>
+                        [Nombre del equipo]
+                    </p>
+
+                    <p class="nota">
+                        Entrega los alimentos cerrados y revisa
+                        que los artículos estén limpios y en
+                        buenas condiciones.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="seccion" id="formulario-donacion">
+            <div class="contenedor formulario-contenedor">
+
+                <div class="titulo-seccion">
+                    <span class="etiqueta">Ayuda a nuestra comunidad</span>
+                    <h2>Registra tu donación</h2>
+
+                    <p>
+                        Completa la información para indicar qué
+                        artículos deseas donar y coordinar su entrega.
+                    </p>
+                </div>
+
+                <div class="formulario-con-mensaje">
+
+                    <form id="form-donacion" class="formulario">
+
+                        <h3>1. Datos del donante</h3>
+
+                        <label for="nombre-donante">Nombre completo</label>
+                        <input type="text"
+                               id="nombre-donante"
+                               name="Nombre"
+                               autocomplete="name"
+                               required>
+
+                        <label for="correo-donante">Correo electrónico</label>
+                        <input type="email"
+                               id="correo-donante"
+                               name="Correo"
+                               autocomplete="email"
+                               required>
+
+                        <label for="telefono-donante">Teléfono de contacto</label>
+                        <input type="tel"
+                               id="telefono-donante"
+                               name="Telefono"
+                               autocomplete="tel"
+                               required>
+
+                        <h3>2. ¿Qué deseas donar?</h3>
+
+                        <label for="tipo-donacion">Tipo de donación</label>
+                        <select id="tipo-donacion"
+                                name="Tipo de donacion"
+                                required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Alimento para perros">Alimento para perros</option>
+                            <option value="Alimento para gatos">Alimento para gatos</option>
+                            <option value="Cobijas y toallas">Cobijas y toallas</option>
+                            <option value="Productos de limpieza">Productos de limpieza</option>
+                            <option value="Accesorios para mascotas">Accesorios para mascotas</option>
+                            <option value="Otros">Otros artículos</option>
+                        </select>
+
+                        <label for="cantidad-donacion">Cantidad y unidad</label>
+                        <input type="text"
+                               id="cantidad-donacion"
+                               name="Cantidad"
+                               placeholder="Ej. 3 bolsas de alimento o 2 cobijas"
+                               required>
+
+                        <label for="estado-donacion">Estado de los artículos</label>
+                        <select id="estado-donacion"
+                                name="Estado"
+                                required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Nuevo y cerrado">Nuevo y cerrado</option>
+                            <option value="Limpio y buen estado">Limpio y en buen estado</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+
+                        <h3>3. Entrega de la donación</h3>
+
+                        <label for="forma-entrega">¿Cómo deseas entregar?</label>
+                        <select id="forma-entrega"
+                                name="Forma de entrega"
+                                required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="Centro de acopio">Llevar al centro de acopio</option>
+                            <option value="Por coordinar">Coordinar la entrega</option>
+                        </select>
+
+                        <label for="fecha-entrega">Fecha aproximada de entrega</label>
+                        <input type="date"
+                               id="fecha-entrega"
+                               name="Fecha de entrega"
+                               required>
+
+                        <label for="comentarios-donacion">Comentarios adicionales</label>
+                        <textarea id="comentarios-donacion"
+                                  name="Comentarios"
+                                  rows="4"
+                                  placeholder="Escribe aquí cualquier información adicional"></textarea>
+
+                        <label class="aceptacion">
+                            <input type="checkbox"
+                                   name="Confirmacion"
+                                   value="Confirmado"
+                                   required>
+
+                            <span>
+                                Confirmo que los datos proporcionados
+                                son correctos.
+                            </span>
+                        </label>
+
+                        <button type="submit" class="boton">
+                            Enviar registro de donación
+                        </button>
+
+                    </form>
+
+                    <aside id="mensaje-donacion"
+                           class="mensaje-enviado"
+                           role="status"
+                           aria-live="polite"
+                           hidden>
+
+                        <h3>Donación Enviada</h3>
+                        <p>Tu registro de donación se ha completado correctamente.</p>
+                        <p>¡Gracias por apoyar a Huellitas Comunitarias y ayudar a nuestros animales!</p>
+
+                    </aside>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="mensaje">
+            <div class="contenedor">
+                <h2>Juntos podemos hacer la diferencia</h2>
+
+                <p>
+                    No necesitas hacer una gran donación para ayudar.
+                    Cada alimento, cobija o artículo de limpieza
+                    puede contribuir al bienestar de un animal.
+                </p>
+
+                <a href="adopciones.html" class="boton">
+                    También puedes adoptar
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Huellitas Comunitarias | Proyecto PAEC</p>
+        <p>Gracias por ser parte del cambio.</p>
+    </footer>
+
+    <script>
+        const formularioDonacion = document.getElementById("form-donacion");
+        const mensajeDonacion = document.getElementById("mensaje-donacion");
+
+        formularioDonacion.addEventListener("submit", function(event) {
+            event.preventDefault();
+            mensajeDonacion.hidden = false;
+            mensajeDonacion.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+        });
+    </script>
+
+</body>
+</html>

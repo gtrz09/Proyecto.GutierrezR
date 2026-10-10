@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Huellitas Comunitarias | Adopciones</title>
+    <link rel="stylesheet" href="estilo.css">
+
+    <style>
+        .formulario-con-mensaje {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .formulario-con-mensaje .formulario {
+            flex: 2;
+            min-width: 280px;
+        }
+
+        .mensaje-enviado {
+            flex: 1;
+            min-width: 200px;
+            padding: 22px;
+            background: #e8f5e9;
+            border: 2px solid #6a994e;
+            border-radius: 12px;
+            color: #386641;
+            text-align: center;
+            position: sticky;
+            top: 20px;
+        }
+
+        .mensaje-enviado h3 {
+            margin-top: 0;
+        }
+
+        .mensaje-enviado[hidden] {
+            display: none;
+        }
+
+        @media (max-width: 650px) {
+            .formulario-con-mensaje {
+                flex-direction: column;
+            }
+
+            .formulario-con-mensaje .formulario,
+            .mensaje-enviado {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="contenedor encabezado">
+        <a href="index.html" class="logo">🐾 Huellitas Comunitarias</a>
+
+        <nav aria-label="Menú principal">
+            <a href="index.html">Inicio</a>
+            <a href="adopciones.html" class="activo">Adopciones</a>
+            <a href="donaciones.html">Donaciones</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="cabecera-pagina">
+        <span class="etiqueta">Encuentra a tu compañero</span>
+
+        <h1>Adopta una huellita</h1>
+
+        <p>
+            Cada animal tiene una historia y merece una nueva
+            oportunidad. Conoce a nuestros amigos y descubre
+            todo lo que pueden aportar a tu vida.
+        </p>
+    </section>
+
+    <section class="seccion contenedor">
+        <div class="galeria">
+
+            <article class="mascota">
+                <img src="Imagenes/perrito2.png" alt="Perro de color dorado">
+
+                <div class="mascota-info">
+                    <span class="tipo">Perro</span>
+                    <h2>Max</h2>
+                    <p><strong>Edad:</strong> 2 meses </p>
+
+                    <p>
+                        Es un perro amigable que disfruta jugar
+                        y pasar tiempo con las personas.
+                    </p>
+
+                    <a href="#ficha-adopcion"
+                       class="boton boton-completo"
+                       onclick="seleccionarMascota('Max')">
+                        Adoptar a Max
+                    </a>
+                </div>
+            </article>
+
+            <article class="mascota">
+                <img src="Imagenes/PERRO.jpeg" alt="Gato de pelaje gris">
+
+                <div class="mascota-info">
+                    <span class="tipo">Perro</span>
+                    <h2>Luna</h2>
+                    <p><strong>Edad:</strong> 1 mes</p>
+
+                    <p>
+Es un cachorrito curioso y tierno que fue rescatado. Busca un hogar cálido y amoroso donde crecer sano y protegido.
+                    </p>
+
+                    <a href="#ficha-adopcion"
+                       class="boton boton-completo"
+                       onclick="seleccionarMascota('Luna')">
+                        Adoptar a Luna
+                    </a>
+                </div>
+            </article>
+
+            <article class="mascota">
+                <img src="Imagenes/perrito.png" alt="Perro de color café">
+
+                <div class="mascota-info">
+                    <span class="tipo">Perro</span>
+                    <h2>Rocky</h2>
+                    <p><strong>Edad:</strong> 2 años</p>
+
+                    <p>
+                        Es un compañero alegre que necesita una
+                        familia dispuesta a darle mucho cariño.
+                    </p>
+
+                    <a href="#ficha-adopcion"
+                       class="boton boton-completo"
+                       onclick="seleccionarMascota('Rocky')">
+                        Adoptar a Rocky
+                    </a>
+                </div>
+            </article>
+
+            <article class="mascota">
+                <img src="Imagenes/gato.jpeg" alt="Gato de pelaje claro">
+
+                <div class="mascota-info">
+                    <span class="tipo">Gato</span>
+                    <h2>Misu</h2>
+                    <p><strong>Edad:</strong> 8 meses</p>
+
+                    <p>
+                      Es un gatito explorador y explorador de pelaje gris y blanco, muy limpio y cariñoso que merece crecer en un ambiente lleno de cuidados.
+                    </p>
+
+                    <a href="#ficha-adopcion"
+                       class="boton boton-completo"
+                       onclick="seleccionarMascota('Michi')">
+                        Adoptar a Misu
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="seccion fondo-claro" id="ficha-adopcion">
+        <div class="contenedor formulario-contenedor">
+
+            <div class="titulo-seccion">
+                <span class="etiqueta">Una nueva oportunidad</span>
+
+                <h2>Ficha de solicitud de adopción</h2>
+
+                <p>
+                    Completa tus datos para expresar tu interés
+                    en adoptar una mascota. El envío de la solicitud
+                    no garantiza la adopción.
+                </p>
+            </div>
+
+            <div class="formulario-con-mensaje">
+
+                <form id="form-adopcion" class="formulario">
+
+                    <h3>1. Tus datos personales</h3>
+
+                    <label for="nombre-adopcion">Nombre completo</label>
+                    <input type="text"
+                           id="nombre-adopcion"
+                           name="Nombre"
+                           autocomplete="name"
+                           required>
+
+                    <label for="edad-adopcion">Edad</label>
+                    <input type="number"
+                           id="edad-adopcion"
+                           name="Edad"
+                           min="18"
+                           required>
+
+                    <label for="correo-adopcion">Correo electrónico</label>
+                    <input type="email"
+                           id="correo-adopcion"
+                           name="Correo"
+                           autocomplete="email"
+                           required>
+
+                    <label for="telefono-adopcion">Teléfono de contacto</label>
+                    <input type="tel"
+                           id="telefono-adopcion"
+                           name="Telefono"
+                           autocomplete="tel"
+                           required>
+
+                    <h3>2. Mascota que deseas adoptar</h3>
+
+                    <label for="mascota-elegida">
+                        Selecciona una mascota
+                    </label>
+
+                    <select id="mascota-elegida"
+                            name="Mascota"
+                            required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Max">Max - Perro</option>
+                        <option value="Luna">Luna - Gata</option>
+                        <option value="Rocky">Rocky - Perro</option>
+                        <option value="Michi">Michi - Gato</option>
+                    </select>
+
+                    <label for="tipo-vivienda">
+                        ¿Dónde vivirá la mascota?
+                    </label>
+
+                    <select id="tipo-vivienda"
+                            name="Vivienda"
+                            required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Departamento">Departamento</option>
+                        <option value="Otro">Otro</option>
+                    </select>
+
+                    <label for="experiencia">
+                        ¿Has tenido mascotas anteriormente?
+                    </label>
+
+                    <select id="experiencia"
+                            name="Experiencia"
+                            required>
+                        <option value="">Selecciona una opción</option>
+                        <option value="Si">Sí</option>
+                        <option value="No">No</option>
+                    </select>
+
+                    <label for="cuidados">
+                        ¿Cómo cuidarás de tu mascota?
+                    </label>
+
+                    <textarea id="cuidados"
+                              name="Cuidados"
+                              rows="4"
+                              placeholder="Cuéntanos cómo cubrirás su alimentación, espacio y atención veterinaria..."
+                              required></textarea>
+
+                    <label class="aceptacion">
+                        <input type="checkbox"
+                               name="Compromiso"
+                               value="Aceptado"
+                               required>
+
+                        <span>
+                            Me comprometo a cuidar responsablemente
+                            a la mascota.
+                        </span>
+                    </label>
+
+                    <button type="submit" class="boton">
+                        Enviar solicitud de adopción
+                    </button>
+
+                </form>
+
+                <aside id="mensaje-adopcion"
+                       class="mensaje-enviado"
+                       role="status"
+                       aria-live="polite"
+                       hidden>
+                    <h3>Solicitud Enviada</h3>
+                    <p>
+                        Gracias por tu interés en adoptar.
+                        Hemos registrado tu solicitud correctamente.
+                    </p>
+                    <p>¡Gracias por darle una oportunidad a una huellita!</p>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="mensaje">
+        <div class="contenedor">
+            <h2>Antes de adoptar</h2>
+
+            <p>
+                Asegúrate de contar con tiempo, espacio y recursos
+                para cuidar a tu mascota. Toda adopción debe ser
+                responsable y considerar las necesidades del animal.
+            </p>
+
+            <a href="index.html" class="boton">
+                Volver al inicio
+            </a>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p>© 2026 Huellitas Comunitarias | Proyecto PAEC</p>
+    <p>Adopta con responsabilidad, cambia una vida.</p>
+</footer>
+
+<script>
+    function seleccionarMascota(nombre) {
+        document.getElementById("mascota-elegida").value = nombre;
+
+        document.getElementById("ficha-adopcion").scrollIntoView({
+            behavior: "smooth"
+        });
+    }
+
+    document.getElementById("form-adopcion").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const mensaje = document.getElementById("mensaje-adopcion");
+        mensaje.hidden = false;
+
+        mensaje.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    });
+</script>
+
+</body>
+</html>

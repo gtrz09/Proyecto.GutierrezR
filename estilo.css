@@ -1,0 +1,652 @@
+
+/* ========================================
+   CONFIGURACION GENERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFFDF8;
+    color: #3D493C;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   ENCABEZADO Y MENU
+======================================== */
+
+header {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E5E7DC;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.encabezado {
+    min-height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    color: #426B50;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+nav a {
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.activo {
+    background-color: #426B50;
+    color: #FFFFFF;
+}
+
+/* ========================================
+   PORTADA DE INICIO
+======================================== */
+
+.portada {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    padding: 70px 7%;
+    background-color: #F0F3E8;
+}
+
+.portada-texto {
+    flex: 1;
+}
+
+.portada-texto h1 {
+    font-size: 46px;
+    line-height: 1.15;
+    margin: 18px 0;
+    color: #355640;
+}
+
+.portada-texto p {
+    font-size: 17px;
+    margin-bottom: 25px;
+    max-width: 550px;
+}
+
+.portada-imagen {
+    flex: 1;
+}
+
+.portada-imagen img {
+    width: 100%;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+/* ========================================
+   ETIQUETAS Y TITULOS
+======================================== */
+
+.etiqueta {
+    display: inline-block;
+    color: #426B50;
+    font-size: 13px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+}
+
+.titulo-seccion h2,
+.acopio h2 {
+    color: #355640;
+    font-size: 32px;
+    margin: 10px 0;
+}
+
+.titulo-seccion p {
+    color: #666E62;
+}
+
+/* ========================================
+   BOTONES
+======================================== */
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.boton {
+    display: inline-block;
+    background-color: #426B50;
+    color: #FFFFFF;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.boton:hover {
+    background-color: #2F4F3A;
+    transform: translateY(-2px);
+}
+
+.boton-claro {
+    background-color: #FFFFFF;
+    color: #426B50;
+    border: 1px solid #426B50;
+}
+
+.boton-claro:hover {
+    background-color: #E4EBDD;
+    color: #355640;
+}
+
+.boton-completo {
+    width: 100%;
+    margin-top: 12px;
+    font-size: 14px;
+}
+
+/* ========================================
+   SECCIONES Y TARJETAS
+======================================== */
+
+.seccion {
+    padding-top: 65px;
+    padding-bottom: 65px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7DC;
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 5px 18px rgba(61, 73, 60, 0.05);
+}
+
+.tarjeta h3 {
+    color: #355640;
+    font-size: 20px;
+    margin: 12px 0;
+}
+
+.tarjeta p {
+    color: #666E62;
+    margin-bottom: 12px;
+}
+
+.icono {
+    font-size: 38px;
+}
+
+.enlace {
+    display: inline-block;
+    color: #426B50;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.enlace:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   MENSAJE DE CONCIENTIZACION
+======================================== */
+
+.mensaje {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #426B50;
+    color: #FFFFFF;
+}
+
+.mensaje h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.mensaje p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+}
+
+.mensaje .boton {
+    background-color: #FFFFFF;
+    color: #355640;
+}
+
+.mensaje .boton:hover {
+    background-color: #E4EBDD;
+}
+
+/* ========================================
+   ENCABEZADO DE PAGINAS
+======================================== */
+
+.cabecera-pagina {
+    text-align: center;
+    padding: 65px 20px;
+    background-color: #F0F3E8;
+}
+
+.cabecera-pagina h1 {
+    font-size: 40px;
+    color: #355640;
+    margin: 10px 0;
+}
+
+.cabecera-pagina p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #666E62;
+}
+
+/* ========================================
+   GALERIA DE MASCOTAS
+======================================== */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.mascota {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7DC;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 5px 18px rgba(61, 73, 60, 0.07);
+    transition: 0.3s;
+}
+
+.mascota:hover {
+    transform: translateY(-5px);
+}
+
+.mascota img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.mascota-info {
+    padding: 20px;
+}
+
+.mascota-info h2 {
+    color: #355640;
+    font-size: 23px;
+    margin: 5px 0;
+}
+
+.mascota-info p {
+    color: #666E62;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.tipo {
+    display: inline-block;
+    color: #426B50;
+    background-color: #F0F3E8;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* ========================================
+   LISTAS DE DONACIONES
+======================================== */
+
+.lista {
+    list-style-position: inside;
+    color: #666E62;
+}
+
+.lista li {
+    margin: 10px 0;
+}
+
+/* ========================================
+   CENTRO DE ACOPIO
+======================================== */
+
+.fondo-claro {
+    background-color: #F0F3E8;
+}
+
+.acopio {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.datos-acopio {
+    background-color: #FFFFFF;
+    border: 1px solid #E5E7DC;
+    border-radius: 18px;
+    padding: 28px;
+}
+
+.datos-acopio h3 {
+    color: #355640;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.datos-acopio p {
+    margin: 10px 0;
+}
+
+.nota {
+    border-top: 1px solid #E5E7DC;
+    padding-top: 15px;
+    color: #666E62;
+    font-size: 14px;
+}
+
+/* ========================================
+   FORMULARIOS
+======================================== */
+
+.formulario-contenedor {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.formulario {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border: 1px solid #E5E7DC;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(61, 73, 60, 0.06);
+}
+
+.formulario h3 {
+    color: #355640;
+    margin: 20px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #E5E7DC;
+}
+
+.formulario h3:first-child {
+    margin-top: 0;
+}
+
+.formulario label {
+    display: block;
+    font-weight: bold;
+    margin: 15px 0 6px;
+    color: #3D493C;
+}
+
+.formulario input:not([type="checkbox"]),
+.formulario select,
+.formulario textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #C9D2C5;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: #FFFDF8;
+    color: #3D493C;
+}
+
+.formulario input:focus,
+.formulario select:focus,
+.formulario textarea:focus {
+    outline: 2px solid #426B50;
+    outline-offset: 2px;
+}
+
+.formulario textarea {
+    resize: vertical;
+}
+
+.formulario .aceptacion {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-weight: normal;
+    margin: 22px 0;
+}
+
+.formulario .aceptacion input {
+    margin-top: 5px;
+    accent-color: #426B50;
+}
+
+.formulario .aceptacion span {
+    flex: 1;
+}
+
+.formulario button {
+    border: none;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+/* ========================================
+   PIE DE PAGINA
+======================================== */
+
+footer {
+    background-color: #2F4937;
+    color: #FFFFFF;
+    padding: 25px 15px;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ========================================
+   ADAPTACION PARA TABLETAS
+======================================== */
+
+@media (max-width: 950px) {
+    .galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .tarjetas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .portada {
+        padding: 50px 5%;
+        gap: 25px;
+    }
+
+    .portada-texto h1 {
+        font-size: 36px;
+    }
+}
+
+/* ========================================
+   ADAPTACION PARA CELULARES
+======================================== */
+
+@media (max-width: 650px) {
+    .encabezado {
+        flex-direction: column;
+        padding: 16px 0;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    .portada {
+        flex-direction: column;
+        padding: 40px 6%;
+    }
+
+    .portada-texto h1 {
+        font-size: 34px;
+    }
+
+    .portada-imagen img {
+        height: 260px;
+    }
+
+    .galeria,
+    .tarjetas,
+    .acopio {
+        grid-template-columns: 1fr;
+    }
+
+    .cabecera-pagina h1 {
+        font-size: 32px;
+    }
+
+    .titulo-seccion h2,
+    .acopio h2,
+    .mensaje h2 {
+        font-size: 27px;
+    }
+
+    .seccion {
+        padding-top: 45px;
+        padding-bottom: 45px;
+    }
+
+    .botones {
+        flex-direction: column;
+    }
+
+    .botones .boton {
+        width: 100%;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+}
+
+/* Formulario y mensaje de confirmación */
+.formulario-con-mensaje {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.formulario-con-mensaje form {
+    flex: 2;
+    min-width: 280px;
+}
+
+.mensaje-enviado {
+    flex: 1;
+    min-width: 200px;
+    padding: 25px;
+    background-color: #e4f3df;
+    border: 2px solid #5b8c55;
+    border-radius: 12px;
+    color: #315b31;
+    text-align: center;
+    position: sticky;
+    top: 20px;
+}
+
+.mensaje-enviado h3 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.mensaje-enviado p {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.mensaje-enviado[hidden] {
+    display: none;
+}
+
+@media (max-width: 650px) {
+    .formulario-con-mensaje {
+        flex-direction: column;
+    }
+
+    .formulario-con-mensaje form,
+    .mensaje-enviado {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
